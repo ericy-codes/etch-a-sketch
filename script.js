@@ -11,7 +11,7 @@ function makeGrid(rows, cols) { // Makes a grid with # rows 'row' and # columns 
     gridDiv.style.setProperty('--grid-cols', cols);
 
     for (c = 0; c < (rows * cols); c++) {
-        let cell = document.createElement("div", "divCell");
+        let cell = document.createElement("div");
         cell.addEventListener('mouseover', hoverColor);
         cell.innerText = (c + 1);
         gridDiv.appendChild(cell).className = "grid-item";
