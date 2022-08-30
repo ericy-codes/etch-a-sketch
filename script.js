@@ -11,7 +11,7 @@ function makeGrid(rows, cols) { // Makes a grid with # rows 'row' and # columns 
     gridDiv.style.setProperty('--grid-cols', cols);
 
     for (c = 0; c < (rows * cols); c++) {
-        let cell = document.createElement("div");
+        let cell = document.createElement("div", "divCell");
         cell.addEventListener('mouseover', hoverColor);
         cell.innerText = (c + 1);
         gridDiv.appendChild(cell).className = "grid-item";
@@ -27,8 +27,12 @@ function hoverColor($event){
 // Make button (#/setGrid) change the makeAGrid specifications
 
 setGrid.addEventListener('click', function (){
+    // Remove existing grid
+    gridDiv.innerHTML='';
+
+    // Make new grid
     let newCols = prompt("Enter size");
-    let newRows = newCols
+    let newRows = newCols;
     makeAgrid = makeGrid(newRows, newCols);
     gridDiv.appendChild(makeAGrid);
 });
