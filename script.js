@@ -19,6 +19,7 @@ function makeGrid(rows, cols) { // Makes a grid with # rows 'row' and # columns 
 };
 
 // Change div color on hover
+
 function hoverColor($event){
     const item = $event.target;
     item.style.backgroundColor = "black";
@@ -36,5 +37,3 @@ setGrid.addEventListener('click', function (){
     makeAgrid = makeGrid(newRows, newCols);
     gridDiv.appendChild(makeAGrid);
 });
-
-//setGrid.addEventListener('click')
